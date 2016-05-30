@@ -1,0 +1,4 @@
+import numpy as np
+import matplotlib.pyplt as plt
+
+a=np.arange(1, 10, 1)
