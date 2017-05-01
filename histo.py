@@ -13,17 +13,15 @@ fourth_left=smin+bin_width*3
 bins_left=np.array([first_left, second_left, third_left,
 fourth_left])
 first_height=np.size(np.where( (s < second_left)
-first_left) ))
+& ( s>=first_left) ))
 second_height=np.size(np.where( (s < third_left)
-second_left) ))
+& ( s>=second_left) ))
 third_height=np.size(np.where( (s < fourth_left)
-third_left) ))
+& ( s>=third_left) ))
 fourth_height=np.size(np.where( (s < fifth_left)
-fourth_left) ))
-& ( s>=
-& ( s>=
-& ( s>=
-& ( s>=
+& ( s>=fourth_left) ))
+
+
 bins_height=np.array([first_height, second_height,
 third_height, fourth_height])
 
