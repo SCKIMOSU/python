@@ -67,4 +67,49 @@ plt.grid()
 plt.show()
 
 
+one_sigma=np.size(np.where((nd1>=-1) & (nd1<=1) ))
+#Out[163]: 6768
+ud_count=np.size(np.where((ud1>=-1) & (ud1<=1) ))
+# 10000
+two_sigma=np.size(np.where((nd>=-2) & (nd<=2) ))
+# 9541
+three_sigma=np.size(np.where((nd>=-3) & (nd<=3) ))
+
+
+sd=6
+nd_large=np.random.randn(10000)*sd
+plt.figure(10)
+plt.subplot(2, 1, 1)
+plt.hist(nd, 50)
+#plt.plot(f, y1, 'ko-')
+plt.title('2 subplots')
+plt.ylabel('one_sigma')
+#plt.axis([0, 5, -1, 3])
+plt.grid()
+plt.subplot(2, 1, 2)
+plt.hist(large, 50)
+plt.ylabel('six_sigma')
+#plt.axis([0, 5, -1, 3])
+plt.grid()
+plt.show()
+
+
+one_sigma=np.size(np.where((nd1>=-1) & (nd1<=1) ))
+# 6835
+one_sigma1=np.size(np.where((nd_large>=-1) & (nd_large<=1) ))
+# 1301
+
+two_sigma=np.size(np.where((nd1>=-2) & (nd1<=2) ))
+# 9541
+two_sigma1=np.size(np.where((nd_large>=-2) & (nd_large<=2) ))
+# 2556
+
+three_sigma=np.size(np.where((nd1>=-3) & (nd1<=3) ))
+# 9970
+three_sigma1=np.size(np.where((nd_large>=-3) & (nd_large<=3) ))
+#3805
+
+
+
+
 
