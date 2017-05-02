@@ -31,3 +31,25 @@ plt.subplot(2,1,2)
 plt.bar(bins_left, bins_height, width = bin_width-0.05)
 plt.grid()
 plt.show()
+
+
+pdf=bins_height/np.size(s)
+#np.cumsum(bin_height/np.size(s))
+
+cdf=np.cumsum(pdf)
+
+plt.figure(12)
+plt.subplot(3,1,1)
+plt.bar(bin_left, bin_height/np.size(s), bin_width-0.1)
+
+plt.subplot(3,1,2)
+plt.bar(bin_left, pdf, bin_width-0.1)
+
+plt.subplot(3,1,3)
+plt.bar(bin_left, cdf, bin_width-0.1)
+
+
+
+
+
+
