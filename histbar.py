@@ -40,16 +40,31 @@ cdf=np.cumsum(pdf)
 
 plt.figure(12)
 plt.subplot(3,1,1)
-plt.bar(bin_left, bin_height/np.size(s), bin_width-0.1)
+plt.bar(bins_left, bins_height/np.size(s), bin_width-0.1)
 
 plt.subplot(3,1,2)
-plt.bar(bin_left, pdf, bin_width-0.1)
+plt.bar(bins_left, pdf, bin_width-0.1)
 
 plt.subplot(3,1,3)
-plt.bar(bin_left, cdf, bin_width-0.1)
+plt.bar(bins_left, cdf, bin_width-0.1)
 
 
 
+
+nd1=np.random.randn(10000)
+ud1=np.random.uniform(-1, 1, 10000)
+
+plt.figure(1)
+plt.subplot(2, 1, 1)
+plt.hist(nd1, 4)
+plt.title('2 subplots')
+plt.ylabel('Normal')
+plt.grid()
+plt.subplot(2, 1, 2)
+plt.hist(ud1, 4)
+plt.ylabel('Uniform')
+plt.grid()
+plt.show()
 
 
 
