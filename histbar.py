@@ -110,6 +110,44 @@ three_sigma1=np.size(np.where((nd_large>=-3) & (nd_large<=3) ))
 #3805
 
 
+plt.figure(11)
+plt.subplot(2, 1, 1)
+plt.hist(nd1, 50)
+#plt.plot(f, y1, 'ko-')
+plt.title('2 subplots')
+plt.ylabel('one_sigma')
+plt.axis([-20,20 , 0, 700])
+plt.grid()
+plt.subplot(2, 1, 2)
+plt.hist(nd_large, 50)
+plt.ylabel('six_sigma')
+plt.axis([-20,20 , 0, 700])
+plt.grid()
+plt.show()
+
+
+plt.figure(11)
+plt.subplot(2, 1, 1)
+plt.hist(nd1, 50)
+#plt.plot(f, y1, 'ko-')
+plt.title('2 subplots')
+plt.ylabel('one_sigma')
+plt.axis([-20,20 , 0, 700])
+plt.grid()
+plt.subplot(2, 1, 2)
+plt.hist(nd_large, 50)
+plt.ylabel('six_sigma')
+plt.axis([-20,20 , 0, 700])
+plt.grid()
+plt.show()
+
+one_nd_large=np.size(np.where((nd_large>=-6) & (nd_large<=6) ))
+# 6815
+two_nd_large=np.size(np.where((nd_large>=-6*2) & (nd_large<=6*2) ))
+# 9640
+
+
+
 
 
 
