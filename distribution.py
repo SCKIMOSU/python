@@ -102,3 +102,12 @@ move=3+NormalDistribution[0,:]
 plt.figure(6)
 plt.hist(move, bins=3, normed=True, color='m', alpha=0.75)
 plt.hist(NormalDistribution[0,:], bins=3, normed=True, color='c', alpha=0.75)
+
+plt.figure(7)
+plt.hist(SD1, bins=3, normed=True, color='r', alpha=0.75)
+plt.grid()
+plt.show()
+plt.hist(SD6, bins=3, normed=True, color='M', alpha=0.75)
+plt.grid()
+plt.show()
+
