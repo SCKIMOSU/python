@@ -71,23 +71,23 @@ one_sigma=np.size(np.where((nd1>=-1) & (nd1<=1) ))
 #Out[163]: 6768
 ud_count=np.size(np.where((ud1>=-1) & (ud1<=1) ))
 # 10000
-two_sigma=np.size(np.where((nd>=-2) & (nd<=2) ))
+two_sigma=np.size(np.where((nd1>=-2) & (nd1<=2) ))
 # 9541
-three_sigma=np.size(np.where((nd>=-3) & (nd<=3) ))
+three_sigma=np.size(np.where((nd1>=-3) & (nd1<=3) ))
 
 
 sd=6
 nd_large=np.random.randn(10000)*sd
 plt.figure(10)
 plt.subplot(2, 1, 1)
-plt.hist(nd, 50)
+plt.hist(nd1, 50)
 #plt.plot(f, y1, 'ko-')
 plt.title('2 subplots')
 plt.ylabel('one_sigma')
 #plt.axis([0, 5, -1, 3])
 plt.grid()
 plt.subplot(2, 1, 2)
-plt.hist(large, 50)
+plt.hist(nd_large, 50)
 plt.ylabel('six_sigma')
 #plt.axis([0, 5, -1, 3])
 plt.grid()
@@ -152,7 +152,6 @@ plt.ylabel('six_sigma')
 plt.axis([-20,20 , 0, 700])
 plt.grid()
 plt.show()
-
 
 
 
