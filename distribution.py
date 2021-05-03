@@ -15,6 +15,7 @@ print('ud=', ud)
 
 mu=0; sigma=1
 x1=mu+sigma*np.random.randn(100)
+
 plt.figure(1)
 plt.plot(x1, 'ro')
 plt.grid()
@@ -25,6 +26,7 @@ print('x1 min =', x1.min())
 
 mu=0; sigma2=2
 x2=mu+sigma2*np.random.randn(100)
+
 plt.figure(2)
 plt.plot(x2, 'b*')
 plt.grid()
@@ -50,17 +52,18 @@ print('LogNormal.min() =', LogNormal.min())
 #-15.677832811659252
 print('LogNormal.max() =', LogNormal.max())
 # 12.07469029723136
-plt.figure(1)
-plt.plot(NormalDistribution)
-plt.figure(2)
-plt.plot(LogNormal)
-
-
-plt.figure(3)
-plt.hist(NormalDistribution[0,:], bins=3, normed=True, color='c', alpha=0.75)
 
 plt.figure(4)
-plt.hist(NormalDistribution[0,:], bins=5, normed=True, color='c', alpha=0.75)
+plt.plot(NormalDistribution)
+
+plt.figure(5)
+plt.plot(LogNormal)
+
+plt.figure(6)
+plt.hist(NormalDistribution[0,:], bins=3, density=True, color='c', alpha=0.75)
+# normed=True --> density=True
+plt.figure(7)
+plt.hist(NormalDistribution[0,:], bins=5, density=True, color='c', alpha=0.75)
 
 
 NormalDistribution[0,:].min()
@@ -71,7 +74,7 @@ width=(NormalDistribution[0,:].max()-NormalDistribution[0,:].min())/3
 #1.1107381896200668
 NormalDistribution[0,:].min()+width
 #-0.18214617551601875NormalDistribution[0,:].min()+width*2
-0.928592014104048
+# 0.928592014104048
 NormalDistribution[0,:].min()+width*3
 #2.0393302037241146
 NormalDistribution[0,:].max()
@@ -86,28 +89,51 @@ SD6=mu+sd6*NormalDistribution
 mu1=5
 MU1=mu+sd1*NormalDistribution
 MU5=mu1+sd1*NormalDistribution
-plt.figure(5)
-plt.hist(MU1, bins=3, normed=True, color='r', alpha=0.75)
+plt.figure(8)
+plt.hist(MU1, bins=3, density=True, color='r', alpha=0.75)
 plt.grid()
 plt.show()
-plt.figure(5)
+plt.figure(9)
 #plt.hold(True)
-plt.hist(MU5, bins=3, normed=True, color='m', alpha=0.75)
+plt.hist(MU5, bins=3, density=True, color='m', alpha=0.75)
 plt.grid()
 plt.show()
 
 
 NormalDistribution = np.random.randn(9, 12)
 move=3+NormalDistribution[0,:]
-plt.figure(6)
-plt.hist(move, bins=3, normed=True, color='m', alpha=0.75)
-plt.hist(NormalDistribution[0,:], bins=3, normed=True, color='c', alpha=0.75)
+plt.figure(10)
+plt.hist(move, bins=3, density=True, color='m', alpha=0.75)
+plt.hist(NormalDistribution[0,:], bins=3, density=True, color='c', alpha=0.75)
 
-plt.figure(7)
-plt.hist(SD1, bins=3, normed=True, color='r', alpha=0.75)
+plt.figure(11)
+plt.hist(SD1, bins=3, density=True, color='r', alpha=0.75)
 plt.grid()
 plt.show()
-plt.hist(SD6, bins=3, normed=True, color='M', alpha=0.75)
+plt.hist(SD6, bins=3, density=True, color='m', alpha=0.75)
 plt.grid()
 plt.show()
+
+
+
+nd=np.random.randn(10000)
+plt.figure(100)
+plt.hist(nd, bins=50, color='g')
+plt.grid()
+nd.mean() #-0.008050713102905626
+nd.var() # 1.0059086547373635
+
+a=nd.min()  # -3.5581370865725797
+b=nd.max()  # 3.6194637168219708
+aw=(b-a)/10  # 0.71776008033945504 width of each bin
+
+nd=np.random.randn(10000)
+plt.figure(101)
+n, bins, patches = plt.hist(nd, 50, density=1, facecolor='g', alpha=0.75)
+plt.grid()
+nd.mean() #-0.008050713102905626
+nd.var() # 1.0059086547373635
+a=nd.min()  # -3.5581370865725797
+b=nd.max()  # 3.619463716821970
+aw=(b-a)/10  # 0.71776008033945504 width of each bin
 
