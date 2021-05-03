@@ -129,7 +129,7 @@ aw=(b-a)/10  # 0.71776008033945504 width of each bin
 
 nd=np.random.randn(10000)
 plt.figure(101)
-n, bins, patches = plt.hist(nd, 50, density=1, facecolor='g', alpha=0.75)
+n, bins, patches = plt.hist(nd, 50, density=True, facecolor='g', alpha=0.75)
 plt.grid()
 nd.mean() #-0.008050713102905626
 nd.var() # 1.0059086547373635
