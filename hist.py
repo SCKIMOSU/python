@@ -29,3 +29,25 @@ plt.subplot(2,1,2)
 plt.bar(bins_left, bins_height, width = bin_width-0.05)
 plt.grid()
 plt.show()
+
+plt.figure(20)
+hist, bin_left, patch=plt.hist(s, bins=4)
+plt.grid()
+
+
+pdf=hist/np.size(s)
+plt.figure(21)
+plt.plot(bin_left[:-1], pdf, 'ro-', lw=2)
+
+
+cdf=np.cumsum(pdf)
+plt.figure(22)
+plt.semilogy(bin_left[:-1], cdf, color='c', lw=2)
+#plt.axis([0, 100, 10**-5, 10**0])
+plt.xlabel('s')
+plt.ylabel('Probability of s (s < x)')
+plt.title('Cumulative Density Function of s')
+#plt.text(20, 1e-3, r'Frequency Reuse Factor=9')
+#plt.axis([-5, 50, 1e-4, 1])
+plt.grid(True)
+plt.show()
