@@ -1,6 +1,8 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('TkAgg')
 
 FreqReUse=9
 NoUpLink=12
@@ -92,7 +94,6 @@ plt.text(20, 1e-3, r'Frequency Reuse Factor=9')
 plt.axis([-5, 50, 1e-4, 1])
 plt.grid(True)
 plt.show()
-
 
 
 
