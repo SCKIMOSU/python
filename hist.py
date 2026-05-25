@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 
 s=np.random.uniform(6, 7, 25)
+s=np.round(s,2)
 
 smin=s.min()
 smax=s.max()
