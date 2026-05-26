@@ -8,6 +8,7 @@ s=np.round(s,2)
 smin=s.min()
 smax=s.max()
 bin_width=(s.max()-s.min())/4
+
 first_left=smin
 second_left=smin+bin_width
 third_left=smin+bin_width*2
@@ -18,7 +19,7 @@ bins_left=np.array([first_left, second_left, third_left, fourth_left])
 first_height=np.size(np.where( (s < second_left) & ( s>= first_left) ))
 second_height=np.size(np.where( (s < third_left) & ( s>= second_left) ))
 third_height=np.size(np.where( (s < fourth_left) & ( s>= third_left) ))
-fourth_height=np.size(np.where( (s < fifth_left) & ( s>= fourth_left) ))
+fourth_height = np.size(np.where((s <= fifth_left) & (s >= fourth_left)))
 bins_height=np.array([first_height, second_height, third_height, fourth_height])
 
 plt.figure(1)
@@ -38,7 +39,7 @@ plt.grid()
 
 pdf=hist/np.size(s)
 plt.figure(21)
-plt.plot(bin_left[:-1], pdf, 'ro-', lw=2)
+plt.plot(bin_left[:-1], pdf, 'ro', lw=2)
 
 
 cdf=np.cumsum(pdf)
